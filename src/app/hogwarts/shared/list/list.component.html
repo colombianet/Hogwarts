@@ -1,0 +1,25 @@
+<div class="table-responsive animate__fadeIn">
+    <table class="table mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Patronus</th>
+                <th scope="col">Age</th>
+                <th scope="col">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let character of characters; let i = index">
+                <th>{{ i+1 }}</th>
+                <td>{{ character.name }}</td>
+                <td>{{ (character.patronus | titlecase) || 'No data' }}</td>
+                <td *ngIf="year - character.yearOfBirth != year">{{ year - character.yearOfBirth }}</td>
+                <td *ngIf="year - character.yearOfBirth === year">No data</td>
+                <td>
+                    <img [src]="character.image" alt="Image character" class="img img-thumbnail circle">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

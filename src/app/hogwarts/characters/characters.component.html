@@ -1,0 +1,19 @@
+<div class="row mt-4">
+    <div class="col animate__fadeIn">
+        <h2 class="text-center">Characters section</h2>
+        <h3 class="mt-3">Select wizarding house</h3>
+        <hr>
+
+        <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Select a house
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" *ngFor="let house of wizardHouses" (click)="seeHouse(house)">{{ house | titlecase }}</a>
+            </div>
+        </div>
+
+        <app-loading *ngIf="loading"></app-loading>
+        <app-list *ngIf="!loading" [characters]="characters"></app-list>
+    </div>
+</div>

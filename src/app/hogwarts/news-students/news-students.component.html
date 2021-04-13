@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col mt-4 animate__fadeIn">
+        <h2>List of new students</h2>
+        <hr>
+
+        <div class="table-responsive">
+            <table class="table mt-4">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Patronus</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let character of characters; let i = index">
+                        <th>{{ i+1 }}</th>
+                        <td>{{ character.name }}</td>
+                        <td>{{ character.patronus | titlecase }}</td>
+                        <td>{{ character.age }}</td>
+                        <td>
+                            <img [src]="character.gender | imageNewStudent" alt="Image character" class="img img-thumbnail circle">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row mt-4 animate__fadeIn">
+    <div class="col">
+        <h2 class="text-center">Students section</h2>
+        <hr>
+
+        <div class="text-right">
+            <button class="btn btn-outline-primary" (click)="addStudent()">Add student</button>
+        </div>
+
+        <app-loading *ngIf="loading"></app-loading>
+        <app-list *ngIf="!loading" [characters]="characters"></app-list>
+    </div>
+</div>
